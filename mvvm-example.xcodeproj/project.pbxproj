@@ -8,13 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		244B163454B92D25B01058D9 /* Pods_mvvm_example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA798C64B2F3E445D2F033B1 /* Pods_mvvm_example.framework */; };
+		668D85D71EEEE85E0024F8CF /* FakeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668D85D61EEEE85E0024F8CF /* FakeAPI.swift */; };
 		66A08C581EEED0AD007CAD63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A08C571EEED0AD007CAD63 /* AppDelegate.swift */; };
-		66A08C5A1EEED0AD007CAD63 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A08C591EEED0AD007CAD63 /* ViewController.swift */; };
+		66A08C5A1EEED0AD007CAD63 /* ClientCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A08C591EEED0AD007CAD63 /* ClientCardViewController.swift */; };
 		66A08C5D1EEED0AD007CAD63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66A08C5B1EEED0AD007CAD63 /* Main.storyboard */; };
 		66A08C5F1EEED0AD007CAD63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66A08C5E1EEED0AD007CAD63 /* Assets.xcassets */; };
 		66A08C621EEED0AD007CAD63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66A08C601EEED0AD007CAD63 /* LaunchScreen.storyboard */; };
 		66A08C6D1EEED0AD007CAD63 /* mvvm_exampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A08C6C1EEED0AD007CAD63 /* mvvm_exampleTests.swift */; };
 		66A08C781EEED0AD007CAD63 /* mvvm_exampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A08C771EEED0AD007CAD63 /* mvvm_exampleUITests.swift */; };
+		66EA36201EEEDAD00081B3CE /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EA361F1EEEDAD00081B3CE /* Client.swift */; };
+		66EA36241EEEDBD70081B3CE /* EditClientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EA36231EEEDBD70081B3CE /* EditClientViewController.swift */; };
+		66EA36261EEEDCDE0081B3CE /* Date+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EA36251EEEDCDE0081B3CE /* Date+Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,9 +40,10 @@
 
 /* Begin PBXFileReference section */
 		6210148EED9B32D1D661AA2B /* Pods-mvvm-example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mvvm-example.release.xcconfig"; path = "Pods/Target Support Files/Pods-mvvm-example/Pods-mvvm-example.release.xcconfig"; sourceTree = "<group>"; };
+		668D85D61EEEE85E0024F8CF /* FakeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeAPI.swift; sourceTree = "<group>"; };
 		66A08C541EEED0AD007CAD63 /* mvvm-example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mvvm-example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		66A08C571EEED0AD007CAD63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		66A08C591EEED0AD007CAD63 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		66A08C591EEED0AD007CAD63 /* ClientCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientCardViewController.swift; sourceTree = "<group>"; };
 		66A08C5C1EEED0AD007CAD63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		66A08C5E1EEED0AD007CAD63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		66A08C611EEED0AD007CAD63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +54,9 @@
 		66A08C731EEED0AD007CAD63 /* mvvm-exampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "mvvm-exampleUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		66A08C771EEED0AD007CAD63 /* mvvm_exampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mvvm_exampleUITests.swift; sourceTree = "<group>"; };
 		66A08C791EEED0AD007CAD63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		66EA361F1EEEDAD00081B3CE /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		66EA36231EEEDBD70081B3CE /* EditClientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditClientViewController.swift; sourceTree = "<group>"; };
+		66EA36251EEEDCDE0081B3CE /* Date+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Utils.swift"; sourceTree = "<group>"; };
 		88C4FC91031F0FBE7FD6B97B /* Pods-mvvm-example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mvvm-example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mvvm-example/Pods-mvvm-example.debug.xcconfig"; sourceTree = "<group>"; };
 		DA798C64B2F3E445D2F033B1 /* Pods_mvvm_example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mvvm_example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -114,7 +122,11 @@
 			isa = PBXGroup;
 			children = (
 				66A08C571EEED0AD007CAD63 /* AppDelegate.swift */,
-				66A08C591EEED0AD007CAD63 /* ViewController.swift */,
+				668D85D61EEEE85E0024F8CF /* FakeAPI.swift */,
+				66A08C591EEED0AD007CAD63 /* ClientCardViewController.swift */,
+				66EA36231EEEDBD70081B3CE /* EditClientViewController.swift */,
+				66EA361F1EEEDAD00081B3CE /* Client.swift */,
+				66EA36251EEEDCDE0081B3CE /* Date+Utils.swift */,
 				66A08C5B1EEED0AD007CAD63 /* Main.storyboard */,
 				66A08C5E1EEED0AD007CAD63 /* Assets.xcassets */,
 				66A08C601EEED0AD007CAD63 /* LaunchScreen.storyboard */,
@@ -331,8 +343,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66A08C5A1EEED0AD007CAD63 /* ViewController.swift in Sources */,
+				66EA36261EEEDCDE0081B3CE /* Date+Utils.swift in Sources */,
+				66A08C5A1EEED0AD007CAD63 /* ClientCardViewController.swift in Sources */,
+				66EA36241EEEDBD70081B3CE /* EditClientViewController.swift in Sources */,
 				66A08C581EEED0AD007CAD63 /* AppDelegate.swift in Sources */,
+				66EA36201EEEDAD00081B3CE /* Client.swift in Sources */,
+				668D85D71EEEE85E0024F8CF /* FakeAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
