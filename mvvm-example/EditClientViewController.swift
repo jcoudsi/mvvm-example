@@ -36,6 +36,7 @@ class EditClientViewController: UIViewController, UITextFieldDelegate {
         self.lastNameTextField.delegate = self
         self.birthdateTextField.delegate = self
         self.jobTextField.delegate = self
+        self.photoTextField.delegate = self
     }
     
     
