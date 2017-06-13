@@ -40,7 +40,7 @@ class ClientCardViewController: UIViewController, EditClientViewControllerDelega
         
         self.completeNameLabel.text = "\(client.firstName) \(client.lastName)"
         self.birthdateLabel.text = dateFormatter.string(from: client.birthdate)
-        self.jobLabel.text = "Profession : \(String(describing: client.job))"
+        self.jobLabel.text = "Profession : \(client.job)"
         
         if let photoUrlString = client.photoUrl, let photoUrl = URL(string:photoUrlString)  {
             
