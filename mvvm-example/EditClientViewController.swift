@@ -48,7 +48,7 @@ class EditClientViewController: UIViewController, UITextFieldDelegate {
             self.client.firstName = value
         } else if textField == self.lastNameTextField, let value = textField.text {
             self.client.lastName = value
-        } else if textField == self.birthdateTextField, let value = textField.text, let date = dateFormatter.date(from:value) {
+        } else if textField == self.birthdateTextField, let value = textField.text, value.count == 10, let date = dateFormatter.date(from:value) {
             self.client.birthdate = date
         } else if textField == self.jobTextField, let value = textField.text {
             self.client.job = value
