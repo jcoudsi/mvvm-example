@@ -13,8 +13,11 @@ class FakeAPI {
     static let sharedInstance = FakeAPI()
     func getClient() -> Client {
         
-        let client = Client(firstName: "Jean-Michel", lastName: "Démo", birthdate: Date.from(string: "10/07/1985")!, job: "Expert COBOL")
-        client.photoUrl = URL(string: "http://pexou.synology.me/web_images/avatar1.jpg")
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        
+        let client = Client(firstName: "Jean-Michel", lastName: "Démo", birthdate: dateFormatter.date(from: "10/07/1985")!, job: "Expert COBOL")
+        client.photoUrl = "http://pexou.synology.me/web_images/avatar1.jpg"
         
         return client
     }

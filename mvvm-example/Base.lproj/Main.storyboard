@@ -114,7 +114,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2fY-AE-1g5">
-                                <rect key="frame" x="81.5" y="112" width="213" height="150"/>
+                                <rect key="frame" x="81.5" y="112" width="213" height="120"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="soj-RS-kKN">
                                         <rect key="frame" x="0.0" y="0.0" width="213" height="30"/>
@@ -210,35 +210,11 @@
                                             </textField>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="By5-RH-sI3">
-                                        <rect key="frame" x="0.0" y="120" width="213" height="30"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Job" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Xj-sf-v22">
-                                                <rect key="frame" x="0.0" y="0.0" width="73" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="RsS-uQ-nxU"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GNG-sm-d08">
-                                                <rect key="frame" x="73" y="0.0" width="140" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="UjQ-0K-HME"/>
-                                                </constraints>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                        </subviews>
-                                    </stackView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="soj-RS-kKN" firstAttribute="top" secondItem="2fY-AE-1g5" secondAttribute="top" id="0AQ-DJ-lcr"/>
                                     <constraint firstItem="1Vq-LN-Pua" firstAttribute="width" secondItem="MTk-Ni-daV" secondAttribute="width" id="AL0-Oj-ACm"/>
                                     <constraint firstItem="fcV-Qy-Xzi" firstAttribute="centerX" secondItem="2fY-AE-1g5" secondAttribute="centerX" id="J0d-pG-7L2"/>
-                                    <constraint firstItem="1Vq-LN-Pua" firstAttribute="width" secondItem="GNG-sm-d08" secondAttribute="width" id="Sso-fn-94w"/>
                                     <constraint firstItem="1Vq-LN-Pua" firstAttribute="width" secondItem="V12-IY-UUn" secondAttribute="width" id="X5b-lB-VAd"/>
                                     <constraint firstItem="soj-RS-kKN" firstAttribute="centerX" secondItem="2fY-AE-1g5" secondAttribute="centerX" id="bMZ-fd-Ogf"/>
                                     <constraint firstItem="MRF-ig-aCo" firstAttribute="centerX" secondItem="2fY-AE-1g5" secondAttribute="centerX" id="zC1-Bd-TsW"/>
@@ -258,7 +234,6 @@
                         <outlet property="firstNameTextField" destination="1Vq-LN-Pua" id="o7C-IS-RRC"/>
                         <outlet property="jobTextField" destination="MTk-Ni-daV" id="YEf-3N-BzG"/>
                         <outlet property="lastNameTextField" destination="LxQ-O3-daR" id="REe-FS-bP6"/>
-                        <outlet property="photoTextField" destination="GNG-sm-d08" id="Is7-ev-cuW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lAN-ZY-XFS" userLabel="First Responder" sceneMemberID="firstResponder"/>

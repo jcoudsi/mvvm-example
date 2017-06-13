@@ -35,11 +35,14 @@ class ClientCardViewController: UIViewController, EditClientViewControllerDelega
             return
         }
         
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        
         self.completeNameLabel.text = "\(client.firstName) \(client.lastName)"
-        self.birthdateLabel.text = client.birthdate.toString()
+        self.birthdateLabel.text = dateFormatter.string(from: client.birthdate)
         self.jobLabel.text = "Profession : \(String(describing: client.job))"
         
-        if let photoUrl = client.photoUrl {
+        if let photoUrlString = client.photoUrl, let photoUrl = URL(string:photoUrlString)  {
             
             let dataTask = URLSession.shared.dataTask(with: URLRequest(url: photoUrl), completionHandler: { [weak self] (data, reponse, error) in
                 
