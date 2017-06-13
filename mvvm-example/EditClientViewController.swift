@@ -36,7 +36,12 @@ class EditClientViewController: UIViewController {
         //UITextField -> ViewModel
         self.firstNameTextField.rx.text.bind(to: clientViewModel.firstNameText).addDisposableTo(self.disposeBag)
         self.lastNameTextField.rx.text.bind(to: clientViewModel.lastNameText).addDisposableTo(self.disposeBag)
-        self.birthdateTextField.rx.text.bind(to:clientViewModel.birthdateText).addDisposableTo(self.disposeBag)
+        
+        self.birthdateTextField.rx.text.filter {value in
+            let dateComponents = value?.split(separator: "/")
+            return dateComponents?.count == 3 && value?.count == 10
+        }.bind(to:clientViewModel.birthdateText).addDisposableTo(self.disposeBag)
+        
         self.jobTextField.rx.text.bind(to: clientViewModel.jobText).addDisposableTo(self.disposeBag)
     }
     

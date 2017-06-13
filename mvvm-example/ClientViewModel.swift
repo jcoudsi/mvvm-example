@@ -56,7 +56,7 @@ class ClientViewModel {
         }).addDisposableTo(self.disposeBag)
         
         self.birthdateText.asObservable().subscribe(onNext: { [weak self] birthdateText in
-           self?.client.birthdate = dateFormatter.date(from: birthdateText ?? "") ?? Date()
+           self?.client.birthdate = dateFormatter.date(from: birthdateText!)!
         }).addDisposableTo(self.disposeBag)
         
         self.jobText.asObservable().subscribe(onNext: { [weak self] jobText in
