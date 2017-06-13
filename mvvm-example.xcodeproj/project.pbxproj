@@ -16,9 +16,9 @@
 		66A08C621EEED0AD007CAD63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66A08C601EEED0AD007CAD63 /* LaunchScreen.storyboard */; };
 		66A08C6D1EEED0AD007CAD63 /* mvvm_exampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A08C6C1EEED0AD007CAD63 /* mvvm_exampleTests.swift */; };
 		66A08C781EEED0AD007CAD63 /* mvvm_exampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A08C771EEED0AD007CAD63 /* mvvm_exampleUITests.swift */; };
+		66A41F901EEFDC4F00950DE1 /* ClientViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A41F8F1EEFDC4F00950DE1 /* ClientViewModel.swift */; };
 		66EA36201EEEDAD00081B3CE /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EA361F1EEEDAD00081B3CE /* Client.swift */; };
 		66EA36241EEEDBD70081B3CE /* EditClientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EA36231EEEDBD70081B3CE /* EditClientViewController.swift */; };
-		66EA36261EEEDCDE0081B3CE /* Date+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EA36251EEEDCDE0081B3CE /* Date+Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,9 +54,9 @@
 		66A08C731EEED0AD007CAD63 /* mvvm-exampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "mvvm-exampleUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		66A08C771EEED0AD007CAD63 /* mvvm_exampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mvvm_exampleUITests.swift; sourceTree = "<group>"; };
 		66A08C791EEED0AD007CAD63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		66A41F8F1EEFDC4F00950DE1 /* ClientViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientViewModel.swift; sourceTree = "<group>"; };
 		66EA361F1EEEDAD00081B3CE /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		66EA36231EEEDBD70081B3CE /* EditClientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditClientViewController.swift; sourceTree = "<group>"; };
-		66EA36251EEEDCDE0081B3CE /* Date+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Utils.swift"; sourceTree = "<group>"; };
 		88C4FC91031F0FBE7FD6B97B /* Pods-mvvm-example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mvvm-example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mvvm-example/Pods-mvvm-example.debug.xcconfig"; sourceTree = "<group>"; };
 		DA798C64B2F3E445D2F033B1 /* Pods_mvvm_example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mvvm_example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -126,7 +126,7 @@
 				66A08C591EEED0AD007CAD63 /* ClientCardViewController.swift */,
 				66EA36231EEEDBD70081B3CE /* EditClientViewController.swift */,
 				66EA361F1EEEDAD00081B3CE /* Client.swift */,
-				66EA36251EEEDCDE0081B3CE /* Date+Utils.swift */,
+				66A41F8F1EEFDC4F00950DE1 /* ClientViewModel.swift */,
 				66A08C5B1EEED0AD007CAD63 /* Main.storyboard */,
 				66A08C5E1EEED0AD007CAD63 /* Assets.xcassets */,
 				66A08C601EEED0AD007CAD63 /* LaunchScreen.storyboard */,
@@ -343,11 +343,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66EA36261EEEDCDE0081B3CE /* Date+Utils.swift in Sources */,
 				66A08C5A1EEED0AD007CAD63 /* ClientCardViewController.swift in Sources */,
 				66EA36241EEEDBD70081B3CE /* EditClientViewController.swift in Sources */,
 				66A08C581EEED0AD007CAD63 /* AppDelegate.swift in Sources */,
 				66EA36201EEEDAD00081B3CE /* Client.swift in Sources */,
+				66A41F901EEFDC4F00950DE1 /* ClientViewModel.swift in Sources */,
 				668D85D71EEEE85E0024F8CF /* FakeAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

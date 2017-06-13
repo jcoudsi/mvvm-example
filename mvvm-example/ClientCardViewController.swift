@@ -7,69 +7,50 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
-class ClientCardViewController: UIViewController, EditClientViewControllerDelegate {
-
+class ClientCardViewController: UIViewController {
+    
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var completeNameLabel: UILabel!
     @IBOutlet weak var birthdateLabel: UILabel!
     @IBOutlet weak var jobLabel: UILabel!
     
+    let disposeBag = DisposeBag()
+    
     var editClientViewController:EditClientViewController!
-    var client:Client?
+    var clientViewModel:ClientViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.client = FakeAPI.sharedInstance.getClient()
+        self.clientViewModel = ClientViewModel(api: FakeAPI.sharedInstance)
         
-        if let _ = self.client {
-            self.updateData()
+        self.clientViewModel?.completeNameText.asObservable().bind(to: self.completeNameLabel.rx.text).addDisposableTo(self.disposeBag)
+        self.clientViewModel?.birthdateText.asObservable().bind(to: self.birthdateLabel.rx.text).addDisposableTo(self.disposeBag)
+        self.clientViewModel?.jobText.asObservable().bind(to: self.jobLabel.rx.text).addDisposableTo(self.disposeBag)
+        
+        if let photoURL = self.clientViewModel?.photoURL {
+            
+            URLSession.shared.rx.data(request: URLRequest(url: photoURL))
+                .observeOn(MainScheduler.instance)
+                .subscribe(onNext: { [weak self] data in
+                    
+                    self?.photoImageView.image = UIImage(data: data)
+                    
+                }).addDisposableTo(self.disposeBag)
         }
         
     }
-    
-    func updateData() {
-        
-        guard let client = self.client else {
-            return
-        }
-        
-        self.completeNameLabel.text = "\(client.firstName) \(client.lastName)"
-        self.birthdateLabel.text = client.birthdate.toString()
-        self.jobLabel.text = "Profession : \(String(describing: client.job))"
-        
-        if let photoUrl = client.photoUrl {
-            
-            let dataTask = URLSession.shared.dataTask(with: URLRequest(url: photoUrl), completionHandler: { [weak self] (data, reponse, error) in
-                
-                if let data = data {
-                    DispatchQueue.main.async {
-                        self?.photoImageView.image = UIImage(data: data)
-                    }
-                }
-                
-            })
-            
-            dataTask.resume()
-        }
-        
-    }
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "navigationSegue" {
             self.editClientViewController = segue.destination as! EditClientViewController
-            self.editClientViewController.client = self.client
-            self.editClientViewController.delegate = self
+            self.editClientViewController.clientViewModel = self.clientViewModel
         }
     }
     
-    // MARK: - EditClientViewControllerDelegate
-    
-    func editClientViewController(editClientViewController: EditClientViewController, shouldUpdateWithClient client: Client) {
-        self.updateData()
-    }
 }
 

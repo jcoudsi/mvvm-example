@@ -14,7 +14,7 @@ class Client {
     var lastName:String
     var birthdate:Date
     var job:String
-    var photoUrl:URL?
+    var photoUrl:String?
     
     init (firstName:String, lastName:String, birthdate:Date, job:String) {
         self.firstName = firstName

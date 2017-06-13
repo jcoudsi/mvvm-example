@@ -7,57 +7,37 @@
 //
 
 import UIKit
+import RxSwift
 
-protocol EditClientViewControllerDelegate {
-    func editClientViewController(editClientViewController:EditClientViewController, shouldUpdateWithClient client:Client)
-}
-
-class EditClientViewController: UIViewController, UITextFieldDelegate {
-
+class EditClientViewController: UIViewController {
+    
+    let disposeBag = DisposeBag()
+    
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var birthdateTextField: UITextField!
     @IBOutlet weak var jobTextField: UITextField!
-    @IBOutlet weak var photoTextField: UITextField!
     
-    var client:Client!
-    var delegate:EditClientViewControllerDelegate?
+    var clientViewModel:ClientViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.firstNameTextField.text = self.client.firstName
-        self.lastNameTextField.text = self.client.lastName
-        self.birthdateTextField.text = self.client.birthdate.toString()
-        self.jobTextField.text = self.client.job
-        self.photoTextField.text = self.client.photoUrl?.absoluteString
-        
-        self.firstNameTextField.delegate = self
-        self.lastNameTextField.delegate = self
-        self.birthdateTextField.delegate = self
-        self.jobTextField.delegate = self
-        self.photoTextField.delegate = self
-    }
-    
-    
-    // MARK: - UITextFieldDelegate
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        
-        if textField == self.firstNameTextField, let value = textField.text {
-            self.client.firstName = value
-        } else if textField == self.lastNameTextField, let value = textField.text {
-            self.client.lastName = value
-        } else if textField == self.birthdateTextField, let value = textField.text, let date = Date.from(string:value) {
-            self.client.birthdate = date
-        } else if textField == self.jobTextField, let value = textField.text {
-            self.client.job = value
-        } else if textField == self.photoTextField, let value = textField.text {
-            self.client.photoUrl = URL(string:value)
+        guard let clientViewModel = self.clientViewModel else {
+            return
         }
         
-        self.delegate?.editClientViewController(editClientViewController: self, shouldUpdateWithClient: self.client)
+        //ViewModel -> UITextField
+        clientViewModel.firstNameText.asObservable().bind(to: self.firstNameTextField.rx.text).addDisposableTo(self.disposeBag)
+        clientViewModel.lastNameText.asObservable().bind(to: self.lastNameTextField.rx.text).addDisposableTo(self.disposeBag)
+        clientViewModel.birthdateText.asObservable().bind(to: self.birthdateTextField.rx.text).addDisposableTo(self.disposeBag)
+        clientViewModel.jobText.asObservable().bind(to: self.jobTextField.rx.text).addDisposableTo(self.disposeBag)
+        
+        //UITextField -> ViewModel
+        self.firstNameTextField.rx.text.bind(to: clientViewModel.firstNameText).addDisposableTo(self.disposeBag)
+        self.lastNameTextField.rx.text.bind(to: clientViewModel.lastNameText).addDisposableTo(self.disposeBag)
+        self.birthdateTextField.rx.text.bind(to:clientViewModel.birthdateText).addDisposableTo(self.disposeBag)
+        self.jobTextField.rx.text.bind(to: clientViewModel.jobText).addDisposableTo(self.disposeBag)
     }
-    
     
 }
