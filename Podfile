@@ -1,9 +1,14 @@
-platform :ios, '8.0'
+platform :ios, '9.0'
 use_frameworks!
 
 target 'mvvm-example' do
   pod 'RxSwift', '~> 3.0'
   pod 'RxCocoa', '~> 3.0'
+end
+
+target 'mvvm-exampleTests' do
+    pod 'RxSwift', '~> 3.0'
+    pod 'RxCocoa', '~> 3.0'
 end
 
 post_install do |installer|
@@ -12,4 +17,5 @@ post_install do |installer|
             config.build_settings['SWIFT_VERSION'] = '3.2'
         end
     end
-  end
+end
+
