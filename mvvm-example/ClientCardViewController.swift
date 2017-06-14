@@ -16,33 +16,27 @@ class ClientCardViewController: UIViewController, EditClientViewControllerDelega
     @IBOutlet weak var jobLabel: UILabel!
     
     var editClientViewController:EditClientViewController!
-    var client:Client?
+    var client:Client!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.client = FakeAPI.sharedInstance.getClient()
-        
-        if let _ = self.client {
-            self.updateData()
-        }
+        self.updateData()
         
     }
     
     func updateData() {
         
-        guard let client = self.client else {
-            return
-        }
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/yyyy"
         
-        self.completeNameLabel.text = "\(client.firstName) \(client.lastName)"
+        self.completeNameLabel.text = "\(self.client.firstName) \(self.client.lastName)"
         self.birthdateLabel.text = dateFormatter.string(from: client.birthdate)
-        self.jobLabel.text = "Profession : \(client.job)"
+        self.jobLabel.text = "Profession : \(self.client.job)"
         
-        if let photoUrlString = client.photoUrl, let photoUrl = URL(string:photoUrlString)  {
+        if let photoUrlString = self.client.photoUrl, let photoUrl = URL(string:photoUrlString)  {
             
             let dataTask = URLSession.shared.dataTask(with: URLRequest(url: photoUrl), completionHandler: { [weak self] (data, reponse, error) in
                 
